@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thitu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nolope.css') }}">
+</head>
+<body>
+    <div class="app">
+
+  <!-- Đầu trang -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="seal" aria-hidden="true">詩</span>
+      <div>
+        <h1 class="brand-name">Thi Tứ <span class="brand-han">詩思</span></h1>
+        <p class="brand-tag">Hôm nay lòng bạn nghĩ về điều gì?</p>
+      </div>
+    </div>
+    <svg class="clouds" viewBox="0 0 360 60" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M30 40c-10 0-12-12-2-14 2-9 16-10 20-2 8-4 16 2 14 10 6 2 4 6-2 6z"/>
+        <path d="M170 46c-8 0-10-10-2-12 2-7 13-8 16-1 7-3 13 2 11 8 5 2 3 5-2 5z"/>
+        <path d="M250 16c-8 0-10-9-2-11 2-6 12-7 15-1 6-3 12 1 10 7 5 2 3 5-2 5z"/>
+        <path d="M320 44c-8 0-10-10-2-12 2-7 13-8 16-1 7-3 13 2 11 8 5 2 3 5-2 5z"/>
+      </g>
+    </svg>
+  </header>
+
+  <main class="layout">
+
+    <!-- Bảng điều khiển -->
+    <aside class="panel" aria-label="Tuỳ chọn sáng tác">
+      <label class="field-label" for="chu-de">Chủ đề</label>
+      <input id="chu-de" class="input" type="text" value="Mùa thu quê mẹ">
+
+      <div class="chips" role="group" aria-label="Gợi ý chủ đề">
+        <button class="chip is-active" type="button">Mùa thu</button>
+        <button class="chip" type="button">Quê hương</button>
+        <button class="chip" type="button">Mẹ</button>
+        <button class="chip" type="button">Hà Nội</button>
+        <button class="chip" type="button">Tết</button>
+        <button class="chip" type="button">Mưa</button>
+      </div>
+
+      <label class="field-label" for="cam-xuc">Cảm xúc</label>
+      <select id="cam-xuc" class="input select">
+        <option>nhẹ nhàng, man mác</option>
+        <option>da diết, nhớ nhung</option>
+        <option>vui tươi, ấm áp</option>
+        <option>trầm lắng, suy tư</option>
+      </select>
+
+      <div class="row">
+        <div>
+          <label class="field-label" for="so-cap">Số cặp</label>
+          <select id="so-cap" class="input select">
+            <option>2</option><option selected>3</option><option>4</option><option>5</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="chat-luong">Chất lượng</label>
+          <select id="chat-luong" class="input select">
+            <option>Nhanh</option><option selected>Cân bằng</option><option>Tinh tế</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="btn-generate"  type="button">Sinh thơ</button>
+
+      <hr class="divider">
+
+      <h2 class="field-label">Gần đây</h2>
+      <ul class="recent"  id="recent-list">
+        <li class="recent-item is-current">
+          <a href="#">
+            <span class="recent-title">Chiều thu gió nhẹ qua hiên…</span>
+            <span class="recent-meta">Mùa thu quê mẹ · 04.11</span>
+          </a>
+        </li>
+        <li class="recent-item">
+          <a href="#">
+            <span class="recent-title">Mưa rơi trên mái phố xưa…</span>
+            <span class="recent-meta">Hà Nội · 02.11</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Thiệp thơ -->
+    <section class="stage">
+      <article class="card" id="card">
+
+        <div class="scene">
+          <svg viewBox="0 0 580 112" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="580" height="112" fill="#e9dcb8"/>
+            <circle cx="426" cy="38" r="20" fill="#c9473b"/>
+            <path d="M200 112V82c40-24 80-44 130-46 40-1 70 14 110 22 50 10 100 4 140-8v62z" fill="#bfb49a"/>
+            <path d="M0 112V86c50-8 100-10 160-2 60 8 100 20 160 18 80-2 140-14 260-12v22z" fill="#6f6254"/>
+            <path d="M0 112v-14c60-6 120 0 200 6 100 8 200 0 380-10v18z" fill="#5d5145"/>
+            <g stroke="#2f241d" stroke-width="3" fill="none" stroke-linecap="round">
+              <path d="M38 112V30"/><path d="M38 52l-14-8M38 64l16-10M38 40l12-8"/>
+              <path d="M84 112V44"/><path d="M84 62l12-8M84 52l-10-6"/>
+            </g>
+          </svg>
+          <span class="corner corner-tl"></span>
+          <span class="leaf" aria-hidden="true"></span>
+        </div>
+
+        <div class="card-body">
+          <div class="poem-col">
+            <div class="poem-title">
+              <span id="poem-title">Mùa thu quê mẹ</span>
+             
+            </div>
+
+            <div class="poem" id="poem">
+              <p class="l1">Chiều thu gió nhẹ qua <u>hiên</u>,</p>
+              <p class="l2">Hương cau thoảng nhớ một <u>miền</u> quê <u>xa</u>.</p>
+              <p class="l1">Trà tàn sương xuống mái <u>nhà</u>,</p>
+              <p class="l2">Mẹ ngồi vá áo tóc <u>ngà</u> thêm sương.</p>
+              <p class="l1">Thu về gợi một nỗi <u>thương</u>,</p>
+              <p class="l2">Lòng ta nhẹ tựa khói <u>hương</u> cuối ngày.</p>
+            </div>
+
+            <footer class="sign">
+              <em id="poem-sign">Hải Phòng, tháng mười một</em>
+              <span class="seal seal-sm" aria-hidden="true">詩</span>
+            </footer>
+          </div>
+
+          <aside class="notes" aria-label="Bên lề – luật thơ">
+            <h3 class="notes-title">Bên lề · Luật thơ</h3>
+
+            <div class="rule" id="notes-text">
+              <span class="dots"><b class="d b">B</b><b class="d t">T</b><b class="d b">B</b></span>
+              <span class="rule-name">câu lục</span>
+            </div>
+            <div class="rule">
+              <span class="dots"><b class="d b">B</b><b class="d t">T</b><b class="d b">B</b><b class="d b">B</b></span>
+              <span class="rule-name">câu bát</span>
+            </div>
+
+            <p>Cả 6 câu đều đúng B–T–B; tiếng 6 và 8 câu bát khác dấu.</p>
+            <p>Vần gieo: <u>hiên – miền, xa – nhà – ngà, sương – thương – hương</u>.</p>
+            <p>Việc xét vần là gần đúng, có thể bỏ sót vần thông.</p>
+          </aside>
+        </div>
+
+        <span class="corner corner-br"></span>
+      </article>
+
+      <div class="actions">
+        <button class="btn" type="button" id="btn-copy">Sao chép</button>
+        <button class="btn btn-dark" type="button" id="btn-export">Xuất thành thiệp</button>
+        <button class="btn" type="button" id="btn-clear">Xoá</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="{{ url_for('static', filename='js/nololpe.js') }}"></script>
+<!-- link js -->
+</body>
+</html>
