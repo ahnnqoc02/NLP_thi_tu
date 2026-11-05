@@ -4,7 +4,6 @@
    CẤU HÌNH
    - Khi có backend AI: đổi USE_MOCK = false và sửa API_URL.
    - KHÔNG để API key trong file JS này (ai cũng xem được).
-     Hãy gọi AI từ backend của bạn, JS chỉ gọi backend.
    ===================================================== */
 const CONFIG = {
   USE_MOCK: false,

@@ -22,7 +22,6 @@ Mở trình duyệt tại: http://127.0.0.1:5000
 
 ## 3. Lưu ý về mô hình AI
 
-Các tệp được cung cấp chỉ có HTML/CSS/JavaScript, chưa có checkpoint hoặc tokenizer của mô hình sinh thơ. Vì vậy API Python hiện chạy chế độ demo để kiểm tra toàn bộ luồng website. Để sinh thơ bằng mô hình AI đã huấn luyện, thay nội dung hàm `generate_with_model()` trong `app.py` bằng mã tải mô hình và inference thực tế. API cần trả về:
 
 ```json
 {"title": "Tên bài thơ", "lines": ["Câu lục...", "Câu bát..."]}
